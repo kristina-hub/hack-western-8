@@ -4,12 +4,7 @@ application = Flask(__name__)
 
 def index():
     return render_template('index.html')
+    # return 'Hello World'
 
-'''
-To test locally:
-
-export FLASK_APP="application.py"
-flask run
-command shift R to reload static files
-
-'''
+# export FLASK_APP="application.py"
+# flask run
