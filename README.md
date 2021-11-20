@@ -32,20 +32,8 @@ $ pip3 install -r requirements.txt
 Created using: https://ezgif.com/maker<br/><br/>
   ![](./static/img/demo.gif)
 
-## AWS Reference
-Tutorial video: https://www.youtube.com/watch?v=4tDjVFbi31o 
-```shell script
-$ python list
-$ python3 -m venv .venv
-$ source .venv/bin/activate
-$ python list
-$ pip3 install --upgrade pip
-$ pip3 install flask
-$ pip3 freeze > requirements.txt
-$ pip3 freeze
-$ pip3 install -r requirements.txt
-```
-Must be called application.py so easily connects to AWS
+## How we used AWS
+### Run a website locally:
 ```shell script
 $ touch application.py
 
@@ -58,26 +46,45 @@ def hello_world():
 $ export FLASK_APP="application.py"
 $ flask run
 ```
-Now runs locally: http://127.0.0.1:5000/
-```shell script
-$ git init
-$ git status
-$ touch .gitignore
-```
-Makes sure not to push anything in repo that do not want to push
+Now runs locally: http://127.0.0.1:5000/<br/>
+
+### Link Flask to AWS Elastic Beanstalk: https://www.youtube.com/watch?v=4tDjVFbi31o
+<br/>
+AWS -> Services -> Elastic beanstalk <br/>
+Create New Application called syllabus-manager using Python <br/>
+Create New Environment called syllabus-manager-env using Web Server Environment <br/>
+
+### Set up continuous deployment with GitHub using AWS Code Pipeline:
+
+Services -> Developer Tools -> CodePipeline <br/>
+Create Pipeline called syllabus-manager <br/>
+GitHub version 2 -> Connect to Github <br/>
+Connection name is connection -> Install a New App -> Choose repo name -> Skip build stage -> Deploy to AWS Elastic Beanstalk <br/>
 ```shell script
 $ git pull
 $ git add .
 $ git commit -m "comment"
 $ git push
 ```
-AWS -> Services -> Elastic beanstalk <br/>
-Create New Application called syllabus-manager using Python <br/>
-Create New Environment called syllabus-manager-env using Web Server Environment <br/>
-
-Services -> Developer Tools -> CodePipeline <br/>
-Create Pipeline called syllabus-manager <br/>
-GitHub version 2 -> Connect to Github <br/>
-Connection name is connection -> Install a New App -> Choose repo name -> Skip build stage -> Deploy to AWS Elastic Beanstalk <br/>
-
 This link is no longer local: http://hack-western-8-env.eba-a5injkhs.us-east-1.elasticbeanstalk.com/ <br/>
+
+Note that it says "Not Secure" beside the link<br/>
+
+### Register an AWS Route 53 Domain and SSL/HTTPS: https://www.youtube.com/watch?v=BeOKTpFsuvk
+<br/>
+Route 53 -> Registered domains -> Register domain -> hack-western-8.com -> check -> wait for hosted zone to be set up<br/>
+Certificate manager -> Request a public certificate -> enter domain name "hack-western-8.com" and "*.hack-western-8.com" -> DNS validation -> Request<br/>
+
+Elastic Beanstalk -> Environments -> hack-western-8-env -> Configuration -> Capacity -> enable load balancing<br/>
+Load balancer -> Add listener -> Port 443 -> Protocol HTTPS -> SSL certificate, choose the one that was just made<br/>
+
+Route 53 -> Hosted zones -> hack-western-8.com -> Create record -> A Route Traffic to IPv4 Address -> Alias -> Elastic Beanstalk Environment -> US East (N. Virginia) -> hack-western-8-env -> create records<br/>
+Create another record but with alias www.<br/>
+
+Now we can load the website using:<br/>
+hack-western-8.com<br/>
+www.hack-western-8.com<br/>
+https://hack-western-8.com<br/>
+https://www.hack-western-8.com<br/>
+
+Note that there is a lock icon beside the link to indicate that we are using a SSL certificate and so we are secure<br/>
