@@ -47,13 +47,15 @@ def hello_world():
 $ export FLASK_APP="application.py"
 $ flask run
 ```
-Now runs locally: http://127.0.0.1:5000/<br/>
+Now runs locally: <br/>
+http://127.0.0.1:5000/<br/>
 
 ### AWS Elastic Beanstalk: 
+```shell script
 AWS -> Services -> Elastic beanstalk <br/>
 Create New Application called syllabus-manager using Python <br/>
 Create New Environment called syllabus-manager-env using Web Server Environment <br/>
-
+```
 ### Link AWS Code Pipeline to Github for Continuous Deployment:
 ```shell script
 Services -> Developer Tools -> CodePipeline
@@ -61,13 +63,14 @@ Create Pipeline called syllabus-manager
 GitHub version 2 -> Connect to Github
 Connection name is connection -> Install a New App -> Choose repo name -> Skip build stage -> Deploy to AWS Elastic Beanstalk
 ```
-This link is no longer local: http://hack-western-8-env.eba-a5injkhs.us-east-1.elasticbeanstalk.com/ <br/>
+This link is no longer local: <br/>
+http://hack-western-8-env.eba-a5injkhs.us-east-1.elasticbeanstalk.com/ <br/>
 
 ### Register an AWS Route 53 Domain:
 ```shell script
 Route 53 -> Registered Domains -> Register Domain -> hack-western-8.com -> Check <br/>
 Route 53 -> Hosted zones -> Create Record -> Route Traffic to IPv4 Address -> Alias -> Elastic Beanstalk -> hack-western-8-env -> Create Records
-Create another record but with alias `www.`
+Create another record but with alias www.
 ```
 Now we can load the website using:<br/>
 [hack-western-8.com](hack-western-8.com)<br/>
