@@ -5,7 +5,11 @@
 - [Impact](#Impact)
 - [Installation](#Installation)
 - [Demo](#Demo)
-- [AWS Implementation](#AWS-Implementation)
+- [Flask](#Flask)
+- [AWS Elastic Beanstalk](#AWS-Elastic-Beanstalk)
+- [AWS CodePipeline ](#AWS-CodePipeline )
+- [AWS Route 53](#AWS-Route-53)
+- [AWS Certificate Manager](#AWS-Certificate-Manager)
 
 ## About
 about...
@@ -24,8 +28,7 @@ $ pip3 install -r requirements.txt
 Created using: https://ezgif.com/maker<br/><br/>
   ![](./static/img/demo.gif)
 
-## AWS Implementation
-### Running Locally using Flask:
+## Flask
 ```shell script
 $ touch application.py
 
@@ -42,13 +45,15 @@ $ flask run
 Now runs locally: <br/>
 http://127.0.0.1:5000/<br/>
 
-### AWS Elastic Beanstalk - Create a Web Server Environment: 
+## AWS Elastic Beanstalk
+Create a Web Server Environment: 
 ```shell script
 AWS -> Services -> Elastic beanstalk
 Create New Application called hack-western-8 using Python
 Create New Environment called hack-western-8-env using Web Server Environment
 ```
-### AWS CodePipeline - Link to Github for Continuous Deployment:
+## AWS CodePipeline
+Link to Github for Continuous Deployment:
 ```shell script
 Services -> Developer Tools -> CodePipeline
 Create Pipeline called hack-western-8
@@ -58,7 +63,8 @@ Connection Name -> Install a New App -> Choose Repo Name -> Skip Build Stage -> 
 This link is no longer local: <br/>
 http://hack-western-8-env.eba-a5injkhs.us-east-1.elasticbeanstalk.com/ <br/>
 
-### AWS Route 53 - Register a Domain:
+## AWS Route 53
+Register a Domain:
 ```shell script
 Route 53 -> Registered Domains -> Register Domain -> hack-western-8.com -> Check
 Route 53 -> Hosted zones -> Create Record -> Route Traffic to IPv4 Address -> Alias -> Elastic Beanstalk -> hack-western-8-env -> Create Records
@@ -71,7 +77,8 @@ http://hack-western-8.com<br/>
 http://www.hack-western-8.com<br/>
 Note that it says "Not Secure" beside the link<br/>
 
-### AWS Certificate Manager - Add SSL to use HTTPS: 
+## AWS Certificate Manager
+Add SSL to use HTTPS: 
 ```shell script
 AWS Certificate Manager -> Request a Public Certificate -> Domain Name "hack-western-8.com" and "*.hack-western-8.com" -> DNS validation -> Request
 $ dig +short CNAME -> No Output? -> Certificate -> Domains -> Create Records in Route 53
