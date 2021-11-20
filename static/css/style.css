@@ -4,6 +4,18 @@
   color: #28724F;
 }
 
+.left {   
+  float: left;
+  width: 75%;
+}
+
+.right {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
 /* title */
 .title {
   padding: 20px;
@@ -24,7 +36,7 @@
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 15px 20px;
+  padding: 15px 30px;
   text-decoration: none; /* no underline */
 }
 
@@ -34,67 +46,28 @@
   color: black;
 }
 
-body {
-  padding: 10px;
-  background: #f1f1f1;
-}
-
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 75%;
-}
-
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 25%;
-  background-color: #f1f1f1;
-  padding-left: 20px;
-}
-
-/* Fake image */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
-/* Add a card effect for articles */
-.card {
+/* rectangle box for articles */
+.box {
   background-color: white;
   padding: 20px;
   margin-top: 20px;
 }
 
-/* Clear floats after the columns */
+.footer {
+  padding: 50px;
+  margin-top: 20px;
+  text-align: center;
+  background: #ddd;
+  background-color: #28724F;
+}
+
+body {
+  padding: 10px;
+  background: #f1f1f1;
+}
+
 .row:after {
   content: "";
   display: table;
   clear: both;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
-}
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .topnav a {
-    float: none;
-    width: 100%;
-  }
 }
