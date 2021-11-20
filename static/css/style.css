@@ -1,7 +1,33 @@
-h1 {
-	/* 10px space between border and text */
-    border: 2px #eee solid;
-    padding: 10px; 
-    color: brown;
-    text-align: center;
+/* title */
+.title {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+/* title */
+.title h1 {
+  font-size: 50px;
+}
+
+/* navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* color changes when hover on navigation bar */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
 }
