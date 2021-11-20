@@ -32,8 +32,8 @@ $ pip3 install -r requirements.txt
 Created using: https://ezgif.com/maker<br/><br/>
   ![](./static/img/demo.gif)
 
-## How we used AWS
-#### Run a website locally:
+## AWS Implementation
+### Running Locally using Flask:
 ```shell script
 $ touch application.py
 
@@ -42,48 +42,45 @@ application = Flask(__name__)
 @application.route('/')
 def hello_world():
 	return 'Hello World'
-	
+```
+```shell script
 $ export FLASK_APP="application.py"
 $ flask run
 ```
 Now runs locally: http://127.0.0.1:5000/<br/>
 
-#### Link Flask to AWS Elastic Beanstalk: 
-https://www.youtube.com/watch?v=4tDjVFbi31o <br/>
+### AWS Elastic Beanstalk: 
 AWS -> Services -> Elastic beanstalk <br/>
 Create New Application called syllabus-manager using Python <br/>
 Create New Environment called syllabus-manager-env using Web Server Environment <br/>
 
-#### Set up continuous deployment with GitHub using AWS Code Pipeline:
-Services -> Developer Tools -> CodePipeline <br/>
-Create Pipeline called syllabus-manager <br/>
-GitHub version 2 -> Connect to Github <br/>
-Connection name is connection -> Install a New App -> Choose repo name -> Skip build stage -> Deploy to AWS Elastic Beanstalk <br/>
+### Link AWS Code Pipeline to Github for Continuous Deployment:
 ```shell script
-$ git pull
-$ git add .
-$ git commit -m "comment"
-$ git push
+Services -> Developer Tools -> CodePipeline
+Create Pipeline called syllabus-manager
+GitHub version 2 -> Connect to Github
+Connection name is connection -> Install a New App -> Choose repo name -> Skip build stage -> Deploy to AWS Elastic Beanstalk
 ```
 This link is no longer local: http://hack-western-8-env.eba-a5injkhs.us-east-1.elasticbeanstalk.com/ <br/>
 
-Note that it says "Not Secure" beside the link<br/>
-
-#### Register an AWS Route 53 Domain and SSL/HTTPS: 
-https://www.youtube.com/watch?v=BeOKTpFsuvk <br/>
-Route 53 -> Registered domains -> Register domain -> hack-western-8.com -> check -> wait for hosted zone to be set up<br/>
-Certificate manager -> Request a public certificate -> enter domain name "hack-western-8.com" and "*.hack-western-8.com" -> DNS validation -> Request<br/>
-
-Elastic Beanstalk -> Environments -> hack-western-8-env -> Configuration -> Capacity -> enable load balancing<br/>
-Load balancer -> Add listener -> Port 443 -> Protocol HTTPS -> SSL certificate, choose the one that was just made<br/>
-
-Route 53 -> Hosted zones -> hack-western-8.com -> Create record -> A Route Traffic to IPv4 Address -> Alias -> Elastic Beanstalk Environment -> US East (N. Virginia) -> hack-western-8-env -> create records<br/>
-Create another record but with alias www.<br/>
-
+### Register an AWS Route 53 Domain:
+```shell script
+Route 53 -> Registered Domains -> Register Domain -> hack-western-8.com -> Check <br/>
+Route 53 -> Hosted zones -> Create Record -> Route Traffic to IPv4 Address -> Alias -> Elastic Beanstalk -> hack-western-8-env -> Create Records
+Create another record but with alias www.
+```
 Now we can load the website using:<br/>
 hack-western-8.com<br/>
 www.hack-western-8.com<br/>
+Note that it says "Not Secure" beside the link<br/>
+
+### Add SSL Certificate to use HTTPS: 
+```shell script
+Certificate manager -> Request a Public Certificate -> Domain Name "hack-western-8.com" and "*.hack-western-8.com" -> DNS validation -> Request
+Elastic Beanstalk -> Environments -> Configuration -> Capacity -> Enable Load Balancing
+Load balancer -> Add listener -> Port 443 -> Protocol HTTPS -> SSL certificate
+```
+Now we can load the website using:<br/>
 https://hack-western-8.com<br/>
 https://www.hack-western-8.com<br/>
-
 Note that there is a lock icon beside the link to indicate that we are using a SSL certificate and so we are secure<br/>
