@@ -91,3 +91,16 @@ Now we can load the website using:<br/>
 https://hack-western-8.com<br/>
 https://www.hack-western-8.com<br/>
 Note that there is a lock icon beside the link to indicate that we are using a SSL certificate so we are secure<br/>
+
+## FavIcon
+Created icon for tab using:<br/>
+https://realfavicongenerator.net/<br/>
+Where we obtained the image:<br/>
+https://www.svgrepo.com/svg/223838/growth-investment<br/>
+
+## References
+
+https://www.youtube.com/watch?v=f6_Qip7HDtU
+https://www.youtube.com/watch?v=CZTCciHE72I
+
+

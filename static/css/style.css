@@ -1,19 +1,21 @@
-/* title */
-.title {
-  padding: 30px;
-  text-align: center;
-  background: white;
+/* apply to all */
+* {
+  box-sizing: border-box;
+  color: #28724F;
 }
 
 /* title */
-.title h1 {
-  font-size: 50px;
+.title {
+  padding: 20px;
+  padding-bottom: 130px;
+  text-align: right;
+  background: white;
 }
 
 /* navigation bar */
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: #28724F;
 }
 
 /* navigation bar */
@@ -32,16 +34,7 @@
   color: black;
 }
 
-
-
-
-
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial;
   padding: 10px;
   background: #f1f1f1;
 }
