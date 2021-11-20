@@ -7,3 +7,7 @@ MarkupSafe==2.0.1
 typing-extensions==3.10.0.2
 Werkzeug==2.0.2
 zipp==3.6.0
+yfinance==0.1.66
+requests==2.26.0
+requests-futures==1.0.0
+yahooquery==2.2.15
