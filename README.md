@@ -33,7 +33,7 @@ Created using: https://ezgif.com/maker<br/><br/>
   ![](./static/img/demo.gif)
 
 ## How we used AWS
-### Run a website locally:
+#### Run a website locally:
 ```shell script
 $ touch application.py
 
@@ -48,14 +48,13 @@ $ flask run
 ```
 Now runs locally: http://127.0.0.1:5000/<br/>
 
-### Link Flask to AWS Elastic Beanstalk: https://www.youtube.com/watch?v=4tDjVFbi31o
-<br/>
+#### Link Flask to AWS Elastic Beanstalk: 
+https://www.youtube.com/watch?v=4tDjVFbi31o <br/>
 AWS -> Services -> Elastic beanstalk <br/>
 Create New Application called syllabus-manager using Python <br/>
 Create New Environment called syllabus-manager-env using Web Server Environment <br/>
 
-### Set up continuous deployment with GitHub using AWS Code Pipeline:
-
+#### Set up continuous deployment with GitHub using AWS Code Pipeline:
 Services -> Developer Tools -> CodePipeline <br/>
 Create Pipeline called syllabus-manager <br/>
 GitHub version 2 -> Connect to Github <br/>
@@ -70,8 +69,8 @@ This link is no longer local: http://hack-western-8-env.eba-a5injkhs.us-east-1.e
 
 Note that it says "Not Secure" beside the link<br/>
 
-### Register an AWS Route 53 Domain and SSL/HTTPS: https://www.youtube.com/watch?v=BeOKTpFsuvk
-<br/>
+#### Register an AWS Route 53 Domain and SSL/HTTPS: 
+https://www.youtube.com/watch?v=BeOKTpFsuvk <br/>
 Route 53 -> Registered domains -> Register domain -> hack-western-8.com -> check -> wait for hosted zone to be set up<br/>
 Certificate manager -> Request a public certificate -> enter domain name "hack-western-8.com" and "*.hack-western-8.com" -> DNS validation -> Request<br/>
 
