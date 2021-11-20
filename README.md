@@ -2,26 +2,18 @@
 
 ## Table of Contents
 - [About](#About)
-- [Tentative Goals](#Tentative-Goals)
-- [Anticipated Impact](#Anticipated-Impact)
-- [Possible Action Plan](#Possible-Action-Plan)
-- [Steps](#Steps)
-- [Deliverables](#Deliverables)
+- [Impact](#Impact)
 - [Installation](#Installation)
 - [Demo](#Demo)
-- [Git Reference](#Git-Reference)
-- [AWS Reference](#AWS-Reference)
+- [AWS Implementation](#AWS-Implementation)
 
 ## About
 about...
 
-## Tentative Goals
+## Impact
 1. 
 2. 
 3. 
-
-## Anticipated Impact
-impact...
 
 ## Installation
 ```shell script
