@@ -12,12 +12,14 @@
 - [AWS Certificate Manager](#AWS-Certificate-Manager)
 
 ## About
-about...
+Many students would like to support charities but do not have the income needed to make such charitable donations.
+However, large companies have the capital to make sizeable contributions to philanthropic services and many of these acts go unnoticed. 
+Our goal is to make a website that showcases the donations that various companies make so that students can invest in them.
 
 ## Impact
-1. 
-2. 
-3. 
+1. Promote financial planning to students
+2. Encourage companies to support charities
+3. Encourage students to support companies that make these contributions
 
 ## Installation
 ```shell script
@@ -57,7 +59,7 @@ Link to Github for Continuous Deployment:
 ```shell script
 Services -> Developer Tools -> CodePipeline
 Create Pipeline called hack-western-8
-GitHub version 2 -> Connect to Github
+GitHub Version 2 -> Connect to Github
 Connection Name -> Install a New App -> Choose Repo Name -> Skip Build Stage -> Deploy to AWS Elastic Beanstalk
 ```
 This link is no longer local: <br/>
