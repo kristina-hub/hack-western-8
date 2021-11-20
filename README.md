@@ -53,22 +53,22 @@ http://127.0.0.1:5000/<br/>
 ### AWS Elastic Beanstalk - Create a Web Server Environment: 
 ```shell script
 AWS -> Services -> Elastic beanstalk
-Create New Application called syllabus-manager using Python
-Create New Environment called syllabus-manager-env using Web Server Environment
+Create New Application called hack-western-8 using Python
+Create New Environment called hack-western-8-env using Web Server Environment
 ```
 ### AWS CodePipeline - Link to Github for Continuous Deployment:
 ```shell script
 Services -> Developer Tools -> CodePipeline
-Create Pipeline called syllabus-manager
+Create Pipeline called hack-western-8
 GitHub version 2 -> Connect to Github
-Connection name is connection -> Install a New App -> Choose repo name -> Skip build stage -> Deploy to AWS Elastic Beanstalk
+Connection Name -> Install a New App -> Choose Repo Name -> Skip Build Stage -> Deploy to AWS Elastic Beanstalk
 ```
 This link is no longer local: <br/>
 http://hack-western-8-env.eba-a5injkhs.us-east-1.elasticbeanstalk.com/ <br/>
 
 ### AWS Route 53 - Register a Domain:
 ```shell script
-Route 53 -> Registered Domains -> Register Domain -> hack-western-8.com -> Check <br/>
+Route 53 -> Registered Domains -> Register Domain -> hack-western-8.com -> Check
 Route 53 -> Hosted zones -> Create Record -> Route Traffic to IPv4 Address -> Alias -> Elastic Beanstalk -> hack-western-8-env -> Create Records
 Create another record but with alias www.
 ```
@@ -82,11 +82,11 @@ Note that it says "Not Secure" beside the link<br/>
 ### AWS Certificate Manager - Add SSL to use HTTPS: 
 ```shell script
 AWS Certificate Manager -> Request a Public Certificate -> Domain Name "hack-western-8.com" and "*.hack-western-8.com" -> DNS validation -> Request
-dig +short CNAME in terminal -> no output? -> Certificate -> Domains -> Create Records in Route 53
+$ dig +short CNAME -> No Output? -> Certificate -> Domains -> Create Records in Route 53
 Elastic Beanstalk -> Environments -> Configuration -> Capacity -> Enable Load Balancing
 Load balancer -> Add listener -> Port 443 -> Protocol HTTPS -> SSL certificate -> Save -> Apply
 ```
 Now we can load the website using:<br/>
 https://hack-western-8.com<br/>
 https://www.hack-western-8.com<br/>
-Note that there is a lock icon beside the link to indicate that we are using a SSL certificate and so we are secure<br/>
+Note that there is a lock icon beside the link to indicate that we are using a SSL certificate so we are secure<br/>
