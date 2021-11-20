@@ -1,0 +1,7 @@
+h1 {
+	/* 10px space between border and text */
+    border: 2px #eee solid;
+    padding: 10px; 
+    color: brown;
+    text-align: center;
+}
