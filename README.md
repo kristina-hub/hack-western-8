@@ -67,18 +67,19 @@ This link is no longer local: http://hack-western-8-env.eba-a5injkhs.us-east-1.e
 ```shell script
 Route 53 -> Registered Domains -> Register Domain -> hack-western-8.com -> Check <br/>
 Route 53 -> Hosted zones -> Create Record -> Route Traffic to IPv4 Address -> Alias -> Elastic Beanstalk -> hack-western-8-env -> Create Records
-Create another record but with alias www.
+Create another record but with alias `www.`
 ```
 Now we can load the website using:<br/>
-hack-western-8.com<br/>
+[hack-western-8.com](hack-western-8.com)<br/>
 www.hack-western-8.com<br/>
 Note that it says "Not Secure" beside the link<br/>
 
 ### Add SSL Certificate to use HTTPS: 
 ```shell script
 Certificate manager -> Request a Public Certificate -> Domain Name "hack-western-8.com" and "*.hack-western-8.com" -> DNS validation -> Request
+dig +short CNAME in terminal -> no output? -> Certificate -> Domains -> Create Records in Route 53
 Elastic Beanstalk -> Environments -> Configuration -> Capacity -> Enable Load Balancing
-Load balancer -> Add listener -> Port 443 -> Protocol HTTPS -> SSL certificate
+Load balancer -> Add listener -> Port 443 -> Protocol HTTPS -> SSL certificate -> Save -> Apply
 ```
 Now we can load the website using:<br/>
 https://hack-western-8.com<br/>
