@@ -1,17 +1,5 @@
 <!DOCTYPE html>
-<script>
-	$(document).ready(function(){$("body").hide().fadeIn(1000);});
-</script>
-<style>
-	html, body{
-		height: 100%;
-		width: 100%;
-	}
-	div{
-		height: 10%;
-		width: 100%;
-	}
-</style>
+
 <html lang="en">
 	<head>
 
@@ -20,6 +8,22 @@
     	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
     	<!-- name of tab -->
     	<title>Giving Tree</title>
+		<style>
+			body {
+				animation: fadeInAnimation ease 2s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+			}
+			@keyframes fadeInAnimation {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+				
+		</style>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
     	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
     	<!-- icon of tab -->
