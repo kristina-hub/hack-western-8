@@ -4,6 +4,11 @@
   color: #28724F;
 }
 
+body {
+  padding: 10px;
+  background: #f1f1f1;
+}
+
 .left {   
   float: left;
   width: 75%;
@@ -14,6 +19,28 @@
   width: 25%;
   background-color: #f1f1f1;
   padding-left: 20px;
+}
+
+/* categories */
+.category {   
+  float: left;
+  width: 33%;
+  padding: 30px;
+  text-align: center;
+}
+
+.category_box {
+  background-image: url("../img/animals.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+img {
+   object-fit: fit;
+   width: 100px;
+   height: 100px;
 }
 
 /* title */
@@ -46,6 +73,12 @@
   color: black;
 }
 
+.row:after {
+  clear: both;
+  display: table;
+  content: "";
+}
+
 /* rectangle box for articles */
 .box {
   background-color: white;
@@ -53,21 +86,10 @@
   margin-top: 20px;
 }
 
-.footer {
+.bottombar {
   padding: 50px;
   margin-top: 20px;
   text-align: center;
   background: #ddd;
   background-color: #28724F;
-}
-
-body {
-  padding: 10px;
-  background: #f1f1f1;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
 }
