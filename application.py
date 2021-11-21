@@ -17,7 +17,7 @@ def my_form_post():
     query = text.upper()
     return query
 
-@application.route('/stocks')
+@application.route('/stocks', methods=['GET', 'POST'])
 def stocks():
    return render_template('stocks.html')
    
