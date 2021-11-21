@@ -134,7 +134,7 @@ def getResultsFromQuery(inputquery, period, interval):
         print(result.url)
         print(result.company)
         dat = getFinanceData(result.ticker, period, interval)
-        historyResults.append(dat)
+        historyResults.append([result.url, result.company, dat])
         print(dat)
 
     #print("The end")
