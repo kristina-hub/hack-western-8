@@ -18,7 +18,7 @@ def query():
 
 @application.route('/query', methods=['POST'])
 def my_form_post():
-    text = request.form['text']
+    text = request.form['query']
     query = text.upper()
 
     data = parseQuery(query)
