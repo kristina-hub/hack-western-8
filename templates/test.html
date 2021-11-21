@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+        .chart{
+            height: 25%;
+            width: 25%;
+	}
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
     	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
 	<head>
 <title>Test</title>
         </head>
-        <body>
-            <div id="myChart">
-                
-            </div>
+        <body id="myChart">
+            
 		<!-- stocks -->
         <script>
-            addChart();
-
-            function addChart(){
             var canvasArray = [];
             for (let i = 0; i < 10; i++) {
-                document.getElementById('myChart').innerHTML += "<canvas id=c" + i + "></canvas>";
+                document.getElementById('myChart').innerHTML += "<div class='chart' width='200' height='100'><canvas width='200' height='100' id=c" + i + "></canvas></div>";
                 var ctxPrep = "c" + i;
                 canvasArray.push(ctxPrep)
             }
@@ -57,9 +62,15 @@
                 options: {
                     responsive: true,
                     maintainAspectratio: false,
-                    
+                    scales: {
+				    yAxes: [{
+					ticks: {
+					beginAtZero: true
+					}
+				}]
+				}
                 }
-            })}}
+            })}
         </script>	
 	</body>
 </html>
