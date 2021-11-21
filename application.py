@@ -1,6 +1,11 @@
+import json
+
 from flask import Flask, render_template, request, url_for, redirect
 from bs4 import BeautifulSoup
 import requests
+
+from python.Combined import getResultsFromQuery
+
 application = Flask(__name__)
 
 @application.route('/')
@@ -27,7 +32,27 @@ def my_form_post():
 @application.route('/stocks', methods=['GET', 'POST'])
 def stocks():
    return render_template('stocks.html')
-   
+
+
+def parseQuery(queryterm):
+    searchterm = "news company donates to " + queryterm
+    datalist = getResultsFromQuery(searchterm, "1mo", "1d")
+
+    jsonlist = list()
+    for dat in datalist:
+        high = dat.get('High')
+        low = dat.get('Low')
+
+        i = 0
+        stock_list = list()
+        for date, val in high.items():
+            stock_list.append((str(date.to_pydatetime()), (high[i], low[i])))
+            i += 1
+        jsonlist.append(stock_list)
+
+    return json.dumps(jsonlist)
+
+
 '''
 To test locally:
 export FLASK_APP="application.py"

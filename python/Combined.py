@@ -69,9 +69,9 @@ def get_symbol(query, preferred_exchange='AMS'):
                     break
         return symbol
 
-def getFinanceData(symbol):
+def getFinanceData(symbol, period, interval):
     ticker = yf.Ticker(symbol)
-    return ticker.history(period='max')
+    return ticker.history(period=period, interval=interval)
 
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
@@ -89,45 +89,53 @@ def cleanName(title):
 
 #query = "company donates to mental health"
 
-query = "news company donates to mental health"
 
-results = []
+def getResultsFromQuery(inputquery, period, interval):
+    # query = "news company donates to mental health"
+    query = inputquery
 
-for url in search(query, tld="co.in", num=10, stop=20, pause=2):
-    # try:
-    # making requests instance
-    reqs = requests.get(url)
+    results = []
 
-    # using the BeaitifulSoup module
-    soup = BeautifulSoup(reqs.text, 'html.parser')
+    for url in search(query, tld="co.in", num=10, stop=20, pause=2):
+        # try:
+        # making requests instance
+        reqs = requests.get(url)
 
-    # displaying the title
-    #print("Title of the website is : ")
+        # using the BeaitifulSoup module
+        soup = BeautifulSoup(reqs.text, 'html.parser')
 
-    title = soup.find('title').get_text()
+        # displaying the title
+        #print("Title of the website is : ")
 
-    print(title)
+        title = soup.find('title').get_text()
 
-    title = cleanName(title)
+        print(title)
 
-    nouns = getNouns(title)
+        title = cleanName(title)
+    
+        nouns = getNouns(title)
 
-    for noun in nouns:
-        symbolResult = get_symbol(str(noun))
-        print(symbolResult.symbol)
-        #print(noun, " = ", symbol)
-        #if (symbol != "No Symbol Found") and (any(x.ticker == symbol.symbol for x in results)):
-        if (symbolResult.symbol != "No Symbol Found"):
-            print(noun, " = ", symbolResult.symbol)
-            results.append(DataResult(url, symbolResult.company, symbolResult.symbol))
-    # except:
-    #     print("error, moving on")
+        for noun in nouns:
+            symbolResult = get_symbol(str(noun))
+            print(symbolResult.symbol)
+            #print(noun, " = ", symbol)
+            #if (symbol != "No Symbol Found") and (any(x.ticker == symbol.symbol for x in results)):
+            if (symbolResult.symbol != "No Symbol Found"):
+                print(noun, " = ", symbolResult.symbol)
+                results.append(DataResult(url, symbolResult.company, symbolResult.symbol))
+        # except:
+        #     print("error, moving on")
 
-    #print("END")
-print(results)
+        #print("END")
+    print(results)
+    historyResults = list()
 
-for result in results:
-    print(result.url)
-    print(result.company)
-    print(getFinanceData(result.ticker))
-#print("The end")
+    for result in results:
+        print(result.url)
+        print(result.company)
+        dat = getFinanceData(result.ticker, period, interval)
+        historyResults.append(dat)
+        print(dat)
+
+    #print("The end")
+    return historyResults
