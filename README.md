@@ -106,15 +106,15 @@ Where we obtained the image:<br/>
 https://www.svgrepo.com/svg/223838/growth-investment<br/>
 
 ## References
-Pictures used for charities:
-Animals: https://www.pexels.com/photo/photo-of-elephants-on-grass-3551498/
-Health: https://www.pexels.com/photo/person-in-white-long-sleeve-shirt-holding-injection-3985166/
-Education: https://www.pexels.com/photo/close-up-of-apple-on-top-of-books-256520/
-Community: https://www.pexels.com/photo/house-lights-turned-on-106399/
-Environment: https://www.pexels.com/photo/green-leafed-trees-302804/
-Human Rights: https://www.pexels.com/photo/boy-wearing-green-crew-neck-shirt-jumping-from-black-stone-on-seashore-939702/
+Pictures used for charities:<br/>
+Animals: https://www.pexels.com/photo/photo-of-elephants-on-grass-3551498/<br/>
+Health: https://www.pexels.com/photo/person-in-white-long-sleeve-shirt-holding-injection-3985166/<br/>
+Education: https://www.pexels.com/photo/close-up-of-apple-on-top-of-books-256520/<br/>
+Community: https://www.pexels.com/photo/house-lights-turned-on-106399/<br/>
+Environment: https://www.pexels.com/photo/green-leafed-trees-302804/<br/>
+Human Rights: https://www.pexels.com/photo/boy-wearing-green-crew-neck-shirt-jumping-from-black-stone-on-seashore-939702/<br/>
 
-Pictures for home page:
-https://www.vecteezy.com/photo/3334027-the-man-show-of-money-in-glass-with-plant-growing
-https://www.vecteezy.com/photo/2928574-save-money-with-stack-coin-growing-your-business-concept-young-plant-growing-in-money-stack-coin
+Pictures for home page:<br/>
+https://www.vecteezy.com/photo/3334027-the-man-show-of-money-in-glass-with-plant-growing<br/>
+https://www.vecteezy.com/photo/2928574-save-money-with-stack-coin-growing-your-business-concept-young-plant-growing-in-money-stack-coin<br/>
 
