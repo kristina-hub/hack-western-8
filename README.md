@@ -23,7 +23,13 @@ Our goal is to make a website that showcases the donations that various companie
 
 ## Installation
 ```shell script
+$ python list
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+$ pip3 install --upgrade pip
 $ pip3 install -r requirements.txt
+$ pip3 install google
+$ python -m spacy download en_core_web_sm
 ```
 
 ## Demo
@@ -106,6 +112,5 @@ Education: https://www.pexels.com/photo/close-up-of-apple-on-top-of-books-256520
 Community: https://www.pexels.com/photo/house-lights-turned-on-106399/
 Environment: https://www.pexels.com/photo/green-leafed-trees-302804/
 Human Rights: https://www.pexels.com/photo/boy-wearing-green-crew-neck-shirt-jumping-from-black-stone-on-seashore-939702/
-
 
 
