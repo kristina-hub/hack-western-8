@@ -30,17 +30,18 @@ body {
 }
 
 .category_box {
-  background-image: url("../img/animals.jpg");
-  background-repeat: no-repeat;
-  background-size: auto;
-  padding: 20px;
-  margin-top: 20px;
+	opacity: 0.5;
+	background-repeat: no-repeat;
+  	background-size: cover;
+  	background-align: center;
+  	padding: 20px;
+  	margin-top: 20px;
+  	border-radius: 25px;
+  	color: black;
 }
 
-img {
-   object-fit: fit;
-   width: 100px;
-   height: 100px;
+.category_box::before {    
+    content: "";
 }
 
 /* title */
