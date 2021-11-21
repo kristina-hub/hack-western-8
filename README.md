@@ -12,9 +12,10 @@
 - [AWS Certificate Manager](#AWS-Certificate-Manager)
 
 ## About
-Many students would like to support charities but do not have the income needed to make such charitable donations.
-However, large companies have the capital to make sizeable contributions to philanthropic services and many of these acts go unnoticed. 
-Our goal is to make a website that showcases the donations that various companies make so that students can invest in them.
+The majority of students do not have a lot of spare cash so it can be challenging for them to choose between investing in their own future or the causes that they believe in to build a better future for others. What if I told you that there is a way to support your favourite charities while also saving money? Students no longer need to choose between investing and donating!<br/>
+Our mission is to encourage students to invest in companies that make donations to charities on their behalf.<br/>
+Large companies have the capital needed to make sizeable donations but many of these acts go unnoticed. That's why we created a platform that connects students to companies that make donations to the charities that they are interested in. Students will be able to support charities they believe in by investing in companies that are driven to make donations to such causes.<br/>
+Students will be able to not only learn more about financial planning but also help support various philanthropic services.<br/>
 
 ## Impact
 1. Promote financial planning to students
