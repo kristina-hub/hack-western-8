@@ -1,10 +1,9 @@
 import json
-
 from flask import Flask, render_template, request, url_for, redirect
 from bs4 import BeautifulSoup
 import requests
 
-from python.Combined import getResultsFromQuery
+# from python.Combined import getResultsFromQuery
 
 application = Flask(__name__)
 
@@ -16,11 +15,11 @@ def index():
 def query():
    return render_template('query.html')
 
-@application.route('/query', methods=['POST'])
-def my_form_post():
-    text = request.form['query']
-    query = text.upper()
-	return query
+# @application.route('/query', methods=['POST'])
+# def my_form_post():
+#     text = request.form['query']
+#     query = text.upper()
+# 	return query
 	
     # data = parseQuery(query)
     # return redirect(url_for('stocks', data=data))
@@ -58,8 +57,8 @@ def stocks():
 # 
 #     return json.dumps(jsonlist)
 
-if __name__ == "__main__":
-    application.run(debug=True)
+# if __name__ == "__main__":
+#     application.run(debug=True)
     #print(parseQuery("hospital"))
 '''
 To test locally:
