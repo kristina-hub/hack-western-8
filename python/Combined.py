@@ -96,35 +96,35 @@ def getResultsFromQuery(inputquery, period, interval):
 
     results = []
 
-    for url in search(query, tld="co.in", num=10, stop=20, pause=2):
-        # try:
-        # making requests instance
-        reqs = requests.get(url)
+    for url in search(query, tld="co.in", num=10, stop=10, pause=0):
+        try:
+            # making requests instance
+            reqs = requests.get(url)
 
-        # using the BeaitifulSoup module
-        soup = BeautifulSoup(reqs.text, 'html.parser')
+            # using the BeaitifulSoup module
+            soup = BeautifulSoup(reqs.text, 'html.parser')
 
-        # displaying the title
-        #print("Title of the website is : ")
+            # displaying the title
+            #print("Title of the website is : ")
 
-        title = soup.find('title').get_text()
+            title = soup.find('title').get_text()
 
-        print(title)
+            print(title)
 
-        title = cleanName(title)
-    
-        nouns = getNouns(title)
+            title = cleanName(title)
 
-        for noun in nouns:
-            symbolResult = get_symbol(str(noun))
-            print(symbolResult.symbol)
-            #print(noun, " = ", symbol)
-            #if (symbol != "No Symbol Found") and (any(x.ticker == symbol.symbol for x in results)):
-            if (symbolResult.symbol != "No Symbol Found"):
-                print(noun, " = ", symbolResult.symbol)
-                results.append(DataResult(url, symbolResult.company, symbolResult.symbol))
-        # except:
-        #     print("error, moving on")
+            nouns = getNouns(title)
+
+            for noun in nouns:
+                symbolResult = get_symbol(str(noun))
+                print(symbolResult.symbol)
+                #print(noun, " = ", symbol)
+                #if (symbol != "No Symbol Found") and (any(x.ticker == symbol.symbol for x in results)):
+                if (symbolResult.symbol != "No Symbol Found"):
+                    print(noun, " = ", symbolResult.symbol)
+                    results.append(DataResult(url, symbolResult.company, symbolResult.symbol))
+        except:
+            print("error, moving on")
 
         #print("END")
     print(results)
