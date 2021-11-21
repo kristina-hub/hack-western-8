@@ -99,10 +99,13 @@ Where we obtained the image:<br/>
 https://www.svgrepo.com/svg/223838/growth-investment<br/>
 
 ## References
+Pictures used for charities:
+Animals: https://www.pexels.com/photo/photo-of-elephants-on-grass-3551498/
+Health: https://www.pexels.com/photo/person-in-white-long-sleeve-shirt-holding-injection-3985166/
+Education: https://www.pexels.com/photo/close-up-of-apple-on-top-of-books-256520/
+Community: https://www.pexels.com/photo/house-lights-turned-on-106399/
+Environment: https://www.pexels.com/photo/green-leafed-trees-302804/
+Human Rights: https://www.pexels.com/photo/boy-wearing-green-crew-neck-shirt-jumping-from-black-stone-on-seashore-939702/
 
-https://www.pexels.com/
-
-https://www.youtube.com/watch?v=f6_Qip7HDtU
-https://www.youtube.com/watch?v=CZTCciHE72I
 
 
