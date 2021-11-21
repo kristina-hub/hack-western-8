@@ -33,9 +33,9 @@
     z-index: 1;
     top:0;
     left:0;
-    background-color: #C2E189; /* light logo color */
-    color: #28724F; /* dark logo color */
-    opacity: 0.7;
+    background-color: white; /* #C2E189 light logo color */
+    color: #28724F; /* #28724F dark logo color */
+    opacity: 1.0;
     border: none;
     font-size: 1.5em;
     font-weight: bolder;
