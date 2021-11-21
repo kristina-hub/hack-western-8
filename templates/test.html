@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+        .chart{
+            height: 25%;
+            width: 25%;
+	}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+    	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+	<head>
+<title>Test</title>
+        </head>
+        <body id="myChart">
+            
+		<!-- stocks -->
+        <script>
+            var canvasArray = [];
+            for (let i = 0; i < 10; i++) {
+                document.getElementById('myChart').innerHTML += "<div class='chart' width='200' height='100'><canvas width='200' height='100' id=c" + i + "></canvas></div>";
+                var ctxPrep = "c" + i;
+                canvasArray.push(ctxPrep)
+            }
+            var el = 0;
+            for (let i = 1; i <= 10; i = i + 1) {
+                var ctx = document.getElementById(`${canvasArray[el]}`).getContext("2d");
+                el++
+                var myNewChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: [1,2,3,4,5,6],
+                    datasets: [{
+                        label: 'Low',
+                        // data: random1, 
+                        data: [1,2,3,4,5,6],
+                        borderWidth: 1,
+                        fill: {
+                            target: 'origin',
+                            above: 'rgba(40, 114, 79, 0.3)'
+                        },
+                        borderColor: 'rgb(40, 114, 79)'
+                    },
+                    {
+                        label: 'High',
+                        // data: random2,
+                        data: [5,6,7,8,9,10],
+                        borderWidth: 1,
+                        fill: {
+                            target: 'origin',
+                            above: 'rgba(88, 193, 219, 0.3)'
+                        
+        
+                        },
+                        borderColor: 'rgb(88, 193, 219)'
+                    }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectratio: false,
+                    scales: {
+				    yAxes: [{
+					ticks: {
+					beginAtZero: true
+					}
+				}]
+				}
+                }
+            })}
+        </script>	
+	</body>
+</html>
