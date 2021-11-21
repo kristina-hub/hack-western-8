@@ -56,13 +56,13 @@
 			}}
 
 			var canvasArray = [];
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < jso.length; i++) {
                 document.getElementById('myChart').innerHTML += "<div class='chart' width='200' height='100'><canvas width='200' height='100' id=c" + i + "></canvas></div>";
                 var ctxPrep = "c" + i;
                 canvasArray.push(ctxPrep)
             }
             var el = 0;
-            for (let i = 1; i <= 10; i = i + 1) {
+            for (let i = 1; i <= jso.length; i = i + 1) {
                 var ctx = document.getElementById(`${canvasArray[el]}`).getContext("2d");
                 el++
                 var myNewChart = new Chart(ctx, {
