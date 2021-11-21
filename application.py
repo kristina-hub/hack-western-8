@@ -1,22 +1,26 @@
 from flask import Flask, render_template, request, url_for, redirect
+from bs4 import BeautifulSoup
+import requests
 application = Flask(__name__)
 
 @application.route('/')
 def index():
     return render_template('index.html')
 
+@application.route('/', methods=['POST'])
+def my_form_post():
+    text = request.form['text']
+    processed_text = text.upper()
+    return processed_text
+
 @application.route('/query', methods=['GET', 'POST'])
 def query():
-    if request.method == 'POST':
-        return redirect(url_for('index'))
-    return render_template('query.html')
+   return render_template('query.html')
 
-@application.route('/stocks', methods=['GET', 'POST'])
+@application.route('/stocks')
 def stocks():
-    if request.method == 'POST':
-        return redirect(url_for('index'))
-    return render_template('stocks.html')
-    
+   return render_template('stocks.html')
+   
 '''
 To test locally:
 export FLASK_APP="application.py"
