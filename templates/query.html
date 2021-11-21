@@ -45,6 +45,9 @@
   			<div class="category">
     			<div class="category_box" style="background-image: url('../static/img/humanrights.jpg');">
       				<h2 style="color: white;">Human Rights</h2>
+					<form action="{{ url_for('application.query') }}" method="post">
+    					<input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  					</form>
     			</div>
   			</div>
   			
