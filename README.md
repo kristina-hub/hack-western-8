@@ -113,4 +113,7 @@ Community: https://www.pexels.com/photo/house-lights-turned-on-106399/
 Environment: https://www.pexels.com/photo/green-leafed-trees-302804/
 Human Rights: https://www.pexels.com/photo/boy-wearing-green-crew-neck-shirt-jumping-from-black-stone-on-seashore-939702/
 
+Pictures for home page:
+https://www.vecteezy.com/photo/3334027-the-man-show-of-money-in-glass-with-plant-growing
+https://www.vecteezy.com/photo/2928574-save-money-with-stack-coin-growing-your-business-concept-young-plant-growing-in-money-stack-coin
 

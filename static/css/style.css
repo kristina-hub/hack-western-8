@@ -1,32 +1,50 @@
 /* apply to all */
 * {
-  box-sizing: border-box;
-  color: #28724F;
+  	box-sizing: border-box;
+  	color: #28724F;
 }
 
 body {
-  padding: 10px;
-  background: #f1f1f1;
+  	padding: 20px;
+  	padding-right: 30px;
+  	background: #f1f1f1;
 }
 
 .left {   
-  float: left;
-  width: 75%;
+  	float: left;
+  	width: 47%;
 }
 
 .right {
-  float: left;
-  width: 25%;
-  background-color: #f1f1f1;
-  padding-left: 20px;
+  	float: left;
+  	width: 53%;
+  	background-color: #f1f1f1;
+  	padding-left: 40px;
+}
+
+.bottom1 {
+  	float: left;
+  	width: 27%;
+}
+
+.bottom2 {
+  	float: left;
+  	width: 33%;
+  	padding-left: 40px;
+}
+
+.bottom3 {
+  	float: left;
+  	width: 40%;
+  	padding-left: 40px;
 }
 
 /* categories */
 .category {   
-  float: left;
-  width: 33%;
-  padding: 30px;
-  text-align: center;
+  	float: left;
+  	width: 33%;
+  	padding: 30px;
+  	text-align: center;
 }
 
 .category_box {
@@ -46,53 +64,55 @@ body {
 
 /* title */
 .title {
-  padding: 20px;
-  padding-bottom: 130px;
-  text-align: right;
-  background: white;
+  	padding: 20px;
+  	padding-bottom: 130px;
+  	text-align: right;
+  	background: white;
 }
 
 /* navigation bar */
 .navbar {
-  overflow: hidden;
-  background-color: #28724F;
+  	overflow: hidden;
+  	background-color: #28724F;
 }
 
 /* navigation bar */
 .navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 15px 30px;
-  text-decoration: none; /* no underline */
+  	float: left;
+  	display: block;
+  	color: #f2f2f2;
+  	text-align: center;
+  	padding: 15px 30px;
+  	text-decoration: none; /* no underline */
 }
 
 /* color changes when hover on navigation bar */
 .navbar a:hover {
-  background-color: #ddd;
-  color: black;
+  	background-color: #ddd;
+  	color: black;
 }
 
 .row:after {
-  clear: both;
-  display: table;
-  content: "";
+  	clear: both;
+  	display: table;
+  	content: "";
 }
 
 /* rectangle box for articles */
 .box {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
+  	background-color: white;
+  	padding: 20px;
+  	padding-left: 60px;
+  	padding-right: 60px;
+  	margin-top: 20px;
 }
 
 .bottombar {
-  padding: 50px;
-  margin-top: 20px;
-  text-align: center;
-  background: #ddd;
-  background-color: #28724F;
+  	padding: 50px;
+  	margin-top: 20px;
+  	text-align: center;
+  	background: #ddd;
+  	background-color: #28724F;
 }
 
 button {
@@ -101,15 +121,15 @@ button {
 }
 
 .fade{
-  animation: fadeInAnimation ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  	animation: fadeInAnimation ease 2s;
+  	animation-iteration-count: 1;
+  	animation-fill-mode: forwards;
 }
 @keyframes fadeInAnimation {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-  }
+  	0% {
+      	opacity: 0;
+  	}
+  	100% {
+      	opacity: 1;
+  	}
 }
