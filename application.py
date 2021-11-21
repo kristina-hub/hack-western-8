@@ -7,15 +7,15 @@ application = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@application.route('/', methods=['POST'])
-def my_form_post():
-    text = request.form['text']
-    processed_text = text.upper()
-    return processed_text
-
-@application.route('/query', methods=['GET', 'POST'])
+@application.route('/query')
 def query():
    return render_template('query.html')
+
+@application.route('/query', methods=['POST'])
+def my_form_post():
+    text = request.form['text']
+    query = text.upper()
+    return query
 
 @application.route('/stocks')
 def stocks():
