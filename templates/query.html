@@ -14,6 +14,7 @@
 		<div class="title">
 			<h1><img src="../static/img/logo_title.png" alt="logo" style="float:left; width:375px; height:100px;"></h1>
 		</div>
+		
 		<!-- navigation bar -->
 		<div class="navbar">
   			<a href="{{ url_for('index') }}">Home</a>
@@ -22,18 +23,26 @@
 		
 		<!-- main body paragraph -->
 		<div class="box">
-			<h2>Select Charities</h2>
-      		<h3>Which charities would you like to help through your investments?</h3>
-      		<form method="POST">
-    			<input name="text">
-    			<input type="submit">
-			</form>
-			<h3>Don't know the name? Pick a category instead!</h3>
+			<h2>Select a charity by:</h2>
       	</div>
+
       	
+      	<div class="searchbox">
+      		<button class="under over" onclick="style.display = 'none'">Name</button>
+      		<div class="under">
+      			<form method="POST">
+    				<input name="text" id="text">
+    				<input type="submit">
+				</form>
+			</div>
+		</div>
+			
       	<!-- categories -->
+      	<div class="charitybox">
+      	<button class="under over" onclick="style.display = 'none'">Category</button>
+      	<div class="under">
 		<div class="row">
-		
+			
 			<form method="POST" action="/stocks">
   			<div class="category">
     			<button class="category_box" name="text" value="Health" style="background-image: url('../static/img/health.jpg');">
@@ -82,6 +91,8 @@
   			</div>
   			</form>
   		
+		</div>
+		</div>
 		</div>
 
 		<!-- bottom bar -->

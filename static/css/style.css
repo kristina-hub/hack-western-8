@@ -4,6 +4,64 @@
   	color: #28724F;
 }
 
+
+.text {
+  float: right;
+  padding: 14px 0;
+  width: 300px;
+}
+
+.text #text {
+  display: inline-block;
+  width: 300px;
+}
+
+
+.container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.under {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.over {
+    z-index: 1;
+    top:0;
+    left:0;
+    background-color: #C2E189; /* light logo color */
+    color: #28724F; /* dark logo color */
+    opacity: 0.7;
+    border: none;
+    font-size: 1.5em;
+    font-weight: bolder;
+/*     font-family: Arial, Helvetica, sans-serif; */
+}
+
+.charitybox {
+  	background-color: white;
+  	padding-right: 60px;
+  	margin-top: 20px;
+  	text-align: center;
+  	position: relative;
+  	height:400px;
+}
+
+.searchbox {
+  	background-color: white;
+	padding-top: 20px;
+  	padding-right: 60px;
+  	margin-top: 20px;
+  	text-align: center;
+  	position: relative;
+  	height: 60px;
+}
+
+
 body {
   	padding: 20px;
   	padding-right: 30px;
@@ -56,6 +114,8 @@ body {
   	margin-top: 20px;
   	border-radius: 25px;
   	color: black;
+  	width:100%;
+	height:100%;
 }
 
 .category_box::before {    
@@ -98,6 +158,14 @@ body {
   	content: "";
 }
 
+
+/* 
+.row {
+	position: relative;
+	padding: 300px;
+}
+ */
+
 /* rectangle box for articles */
 .box {
   	background-color: white;
@@ -105,6 +173,8 @@ body {
   	padding-left: 60px;
   	padding-right: 60px;
   	margin-top: 20px;
+  	text-align: center;
+  	position: relative;
 }
 
 .bottombar {
@@ -113,11 +183,6 @@ body {
   	text-align: center;
   	background: #ddd;
   	background-color: #28724F;
-}
-
-button {
-	width:100%;
-	height:100%;
 }
 
 .fade{
