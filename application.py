@@ -15,6 +15,13 @@ def query():
 def my_form_post():
     text = request.form['text']
     query = text.upper()
+    
+    # string = function(query)
+    # input string into stocks.html
+    
+    # graph = function(query)
+    # input graph into stocks.html
+    
     return query
 
 @application.route('/stocks', methods=['GET', 'POST'])
