@@ -1,4 +1,5 @@
 import yfinance as yf
+import json
 import pandas as pd
 import requests
 import yahooquery as yq
@@ -21,6 +22,7 @@ def get_symbol(query, preferred_exchange='AMS'):
                 break
         return symbol
 
+
 def cleanName(name):
     return name.replace(" inc", "").replace(" ltd", "").replace(",", "").replace(".", "").replace(" corporation", "").replace(" limited", "").lower()
 
@@ -30,4 +32,26 @@ symbol = get_symbol(test)
 
 ticker = yf.Ticker(symbol)
 
-print(ticker.history(period='max'))
+dat = ticker.history(period='1mo', interval='1d')
+print(dat)
+print(dat.to_json())
+high = dat.get('High')
+low = dat.get('Low')
+print("help me")
+i = 0
+stock_list = list()
+for date, val in high.items():
+    stock_list.append((str(date.to_pydatetime()), (high[i], low[i])))
+    i+=1
+
+print(stock_list)
+pogch = json.dumps(stock_list)
+print(pogch)
+#file = open("testdat.json", "w")
+#file.write(pogch)
+#file.close()
+
+
+
+
+
