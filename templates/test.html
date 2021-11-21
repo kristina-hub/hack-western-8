@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+    	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+	<head>
+<title>Test</title>
+        </head>
+        <body>
+            <div id="myChart">
+                
+            </div>
+		<!-- stocks -->
+        <script>
+            addChart();
+
+            function addChart(){
+            var canvasArray = [];
+            for (let i = 0; i < 10; i++) {
+                document.getElementById('myChart').innerHTML += "<canvas id=c" + i + "></canvas>";
+                var ctxPrep = "c" + i;
+                canvasArray.push(ctxPrep)
+            }
+            var el = 0;
+            for (let i = 1; i <= 10; i = i + 1) {
+                var ctx = document.getElementById(`${canvasArray[el]}`).getContext("2d");
+                el++
+                var myNewChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: [1,2,3,4,5,6],
+                    datasets: [{
+                        label: 'Low',
+                        // data: random1, 
+                        data: [1,2,3,4,5,6],
+                        borderWidth: 1,
+                        fill: {
+                            target: 'origin',
+                            above: 'rgba(40, 114, 79, 0.3)'
+                        },
+                        borderColor: 'rgb(40, 114, 79)'
+                    },
+                    {
+                        label: 'High',
+                        // data: random2,
+                        data: [5,6,7,8,9,10],
+                        borderWidth: 1,
+                        fill: {
+                            target: 'origin',
+                            above: 'rgba(88, 193, 219, 0.3)'
+                        
+        
+                        },
+                        borderColor: 'rgb(88, 193, 219)'
+                    }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectratio: false,
+                    
+                }
+            })}}
+        </script>	
+	</body>
+</html>
