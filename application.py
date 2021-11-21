@@ -27,7 +27,7 @@ def my_form_post():
     # graph = function(query)
     # input graph into stocks.html
     
-    return query
+    return parseQuery(query)
 
 @application.route('/stocks', methods=['GET', 'POST'])
 def stocks():
@@ -52,7 +52,8 @@ def parseQuery(queryterm):
 
     return json.dumps(jsonlist)
 
-
+if __name__ == "__main__":
+    application.run(debug=True)
 '''
 To test locally:
 export FLASK_APP="application.py"
