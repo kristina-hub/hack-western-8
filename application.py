@@ -54,6 +54,7 @@ def parseQuery(queryterm):
 
 if __name__ == "__main__":
     application.run(debug=True)
+    #print(parseQuery("hospital"))
 '''
 To test locally:
 export FLASK_APP="application.py"
