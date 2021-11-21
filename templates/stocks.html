@@ -22,6 +22,65 @@
 		</div>
 		
 		<!-- stocks -->
+		<div>
+			<canvas id="myChart" width="400" height="400"></canvas>
+		</div>
+		<script>
+			var list=[];
+			for(i=0;i<24;i++){
+				list.push(i);
+			}
+			var random1 = [];
+			var random2 = [];
+			for(j=0;j<24;j++){
+				var rondom = Math.floor(Math.random() * 100);
+				random1.push(rondom);
+				rondom = Math.floor(Math.random() * 500);
+				random2.push(rondom);
+			}
+	
+			
+			Math.floor(Math.random() * 10);
+			const ctx = document.getElementById('myChart').getContext('2d');
+			const chart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: list,
+				datasets: [{
+					label: 'Low',
+					data: random1,
+					borderWidth: 1,
+					fill: {
+						target: 'origin',
+						above: 'rgba(40, 114, 79, 0.3)'
+					},
+					borderColor: 'rgb(40, 114, 79)'
+				},
+				{
+					label: 'High',
+					data: random2,
+					borderWidth: 1,
+					fill: {
+						target: 'origin',
+						above: 'rgba(88, 193, 219, 0.3)'
+					
+	
+					},
+					borderColor: 'rgb(88, 193, 219)'
+				}
+				]
+			},
+			options: {
+				scales: {
+				yAxes: [{
+					ticks: {
+					beginAtZero: true
+					}
+				}]
+				}
+			}
+			});
+		</script>
 
 		<!-- bottom bar -->
 		<div class="bottombar">
