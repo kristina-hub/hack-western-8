@@ -15,10 +15,14 @@ def get_symbol(query, preferred_exchange='AMS'):
 
         symbol = quotes[0]['symbol']
         for quote in quotes:
-            if quote['exchange'] == preferred_exchange:
+            print("quote = ", quote)
+            if cleanName(quote['longname']) == query.lower():
                 symbol = quote['symbol']
                 break
         return symbol
+
+def cleanName(name):
+    return name.replace(" inc", "").replace(" ltd", "").replace(",", "").replace(".", "").replace(" corporation", "").replace(" limited", "").lower()
 
 test = 'Apple'
 symbol = get_symbol(test)
