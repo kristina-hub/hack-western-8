@@ -20,6 +20,10 @@ def query():
 def my_form_post():
     text = request.form['text']
     query = text.upper()
+
+    data = parseQuery(query)
+
+    return redirect(url_for('stocks', data=data))
     
     # string = function(query)
     # input string into stocks.html
