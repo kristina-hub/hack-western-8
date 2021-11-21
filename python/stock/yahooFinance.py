@@ -47,6 +47,9 @@ for date, val in high.items():
 print(stock_list)
 pogch = json.dumps(stock_list)
 print(pogch)
+#file = open("testdat.json", "w")
+#file.write(pogch)
+#file.close()
 
 
 
