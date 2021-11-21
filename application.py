@@ -43,7 +43,10 @@ def parseQuery(queryterm):
     datalist = getResultsFromQuery(searchterm, "1mo", "1d")
 
     jsonlist = list()
-    for dat in datalist:
+    for lis in datalist:
+        url = lis[0]
+        companyName = lis[1]
+        dat = lis[2]
         high = dat.get('High')
         low = dat.get('Low')
 
@@ -52,7 +55,7 @@ def parseQuery(queryterm):
         for date, val in high.items():
             stock_list.append((str(date.to_pydatetime()), (high[i], low[i])))
             i += 1
-        jsonlist.append(stock_list)
+        jsonlist.append((companyName, stock_list))
 
     return json.dumps(jsonlist)
 
